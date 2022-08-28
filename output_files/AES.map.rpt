@@ -1,0 +1,366 @@
+Analysis & Elaboration report for AES
+Sat May 21 16:52:09 2022
+Quartus Prime Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Elaboration Summary
+  3. Parallel Compilation
+  4. Parameter Settings for User Entity Instance: cipher:encrypt
+  5. Parameter Settings for User Entity Instance: cipher:encrypt|KeyExpansion:keys
+  6. Parameter Settings for User Entity Instance: Inv_cipher:decrypt
+  7. Parameter Settings for User Entity Instance: Inv_cipher:decrypt|KeyExpansion:keys
+  8. Analysis & Elaboration Settings
+  9. Port Connectivity Checks: "Inv_cipher:decrypt"
+ 10. Port Connectivity Checks: "cipher:encrypt|KeyExpansion:keys|rcon:rconFunc"
+ 11. Port Connectivity Checks: "cipher:encrypt|KeyExpansion:keys|subBytes:subFunc_two"
+ 12. Port Connectivity Checks: "cipher:encrypt|KeyExpansion:keys"
+ 13. Analysis & Elaboration Messages
+ 14. Analysis & Elaboration Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2020  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and any partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details, at
+https://fpgasoftware.intel.com/eula.
+
+
+
++-----------------------------------------------------------------------------+
+; Analysis & Elaboration Summary                                              ;
++-------------------------------+---------------------------------------------+
+; Analysis & Elaboration Status ; Successful - Sat May 21 16:52:09 2022       ;
+; Quartus Prime Version         ; 20.1.1 Build 720 11/11/2020 SJ Lite Edition ;
+; Revision Name                 ; AES                                         ;
+; Top-level Entity Name         ; Wrapper                                     ;
+; Family                        ; Cyclone V                                   ;
+; Logic utilization (in ALMs)   ; N/A until Partition Merge                   ;
+; Total registers               ; N/A until Partition Merge                   ;
+; Total pins                    ; N/A until Partition Merge                   ;
+; Total virtual pins            ; N/A until Partition Merge                   ;
+; Total block memory bits       ; N/A until Partition Merge                   ;
+; Total PLLs                    ; N/A until Partition Merge                   ;
+; Total DLLs                    ; N/A until Partition Merge                   ;
++-------------------------------+---------------------------------------------+
+
+
+Parallel compilation attempted to use more processors than were available, which may cause increased compilation time. For lowest compilation time, correct your settings.
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 16          ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 1           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
++----------------------------+-------------+
+
+
++-------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cipher:encrypt ;
++----------------+-------+------------------------------------+
+; Parameter Name ; Value ; Type                               ;
++----------------+-------+------------------------------------+
+; nk             ; 4     ; Signed Integer                     ;
++----------------+-------+------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: cipher:encrypt|KeyExpansion:keys ;
++----------------+-------+------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                 ;
++----------------+-------+------------------------------------------------------+
+; nk             ; 4     ; Signed Integer                                       ;
++----------------+-------+------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Inv_cipher:decrypt ;
++----------------+-------+----------------------------------------+
+; Parameter Name ; Value ; Type                                   ;
++----------------+-------+----------------------------------------+
+; nk             ; 4     ; Signed Integer                         ;
++----------------+-------+----------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: Inv_cipher:decrypt|KeyExpansion:keys ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; nk             ; 4     ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Elaboration Settings                                                                                           ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                          ; Setting            ; Default Value      ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                          ; 5CSEMA5F31C6       ;                    ;
+; Top-level entity name                                                           ; Wrapper            ; AES                ;
+; Family name                                                                     ; Cyclone V          ; Cyclone V          ;
+; Maximum processors allowed for parallel compilation                             ; 16                 ;                    ;
+; Use smart compilation                                                           ; Off                ; Off                ;
+; Enable parallel Assembler and Timing Analyzer during compilation                ; On                 ; On                 ;
+; Enable compact report table                                                     ; Off                ; Off                ;
+; Restructure Multiplexers                                                        ; Auto               ; Auto               ;
+; MLAB Add Timing Constraints For Mixed-Port Feed-Through Mode Setting Don't Care ; Off                ; Off                ;
+; Create Debugging Nodes for IP Cores                                             ; Off                ; Off                ;
+; Preserve fewer node names                                                       ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                                   ; Enable             ; Enable             ;
+; Verilog Version                                                                 ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                                    ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                        ; Auto               ; Auto               ;
+; Safe State Machine                                                              ; Off                ; Off                ;
+; Extract Verilog State Machines                                                  ; On                 ; On                 ;
+; Extract VHDL State Machines                                                     ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                               ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                      ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                                  ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                         ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                       ; On                 ; On                 ;
+; Parallel Synthesis                                                              ; On                 ; On                 ;
+; DSP Block Balancing                                                             ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                              ; On                 ; On                 ;
+; Power-Up Don't Care                                                             ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                                    ; Off                ; Off                ;
+; Remove Duplicate Registers                                                      ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                            ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                          ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                           ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                       ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                            ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                             ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                                  ; Off                ; Off                ;
+; Optimization Technique                                                          ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                              ; 70                 ; 70                 ;
+; Auto Carry Chains                                                               ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                            ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                           ; Off                ; Off                ;
+; Auto ROM Replacement                                                            ; On                 ; On                 ;
+; Auto RAM Replacement                                                            ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                      ; On                 ; On                 ;
+; Auto Shift Register Replacement                                                 ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                                 ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                                   ; On                 ; On                 ;
+; Strict RAM Replacement                                                          ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                               ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                           ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                              ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                                   ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                             ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                               ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                         ; On                 ; On                 ;
+; Report Parameter Settings                                                       ; On                 ; On                 ;
+; Report Source Assignments                                                       ; On                 ; On                 ;
+; Report Connectivity Checks                                                      ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                              ; Off                ; Off                ;
+; Synchronization Register Chain Length                                           ; 3                  ; 3                  ;
+; Power Optimization During Synthesis                                             ; Normal compilation ; Normal compilation ;
+; HDL message level                                                               ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                                 ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                        ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                              ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                       ; 100                ; 100                ;
+; Clock MUX Protection                                                            ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                     ; Off                ; Off                ;
+; Block Design Naming                                                             ; Auto               ; Auto               ;
+; SDC constraint protection                                                       ; Off                ; Off                ;
+; Synthesis Effort                                                                ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal                    ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                            ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                              ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                     ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                          ; On                 ; On                 ;
+; Automatic Parallel Synthesis                                                    ; On                 ; On                 ;
+; Partial Reconfiguration Bitstream ID                                            ; Off                ; Off                ;
++---------------------------------------------------------------------------------+--------------------+--------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "Inv_cipher:decrypt"                                                                                                                                               ;
++-------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port        ; Type  ; Severity ; Details                                                                                                                                                     ;
++-------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; initial_key ; Input ; Warning  ; Input port expression (128 bits) is smaller than the input port (129 bits) it drives.  Extra input bit(s) "initial_key[128..128]" will be connected to GND. ;
++-------------+-------+----------+-------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cipher:encrypt|KeyExpansion:keys|rcon:rconFunc"                                                                                                                                   ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                                                            ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; in   ; Input ; Warning  ; Input port expression (32 bits) is wider than the input port (4 bits) it drives.  The 28 most-significant bit(s) in the expression will be dangling if they have no other fanouts. ;
++------+-------+----------+------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cipher:encrypt|KeyExpansion:keys|subBytes:subFunc_two"                                   ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; Port      ; Type   ; Severity ; Details                                                                             ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+; state_out ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++-----------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "cipher:encrypt|KeyExpansion:keys"                                                                                                                  ;
++------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; Port ; Type  ; Severity ; Details                                                                                                                                             ;
++------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+; key  ; Input ; Warning  ; Input port expression (128 bits) is smaller than the input port (129 bits) it drives.  Extra input bit(s) "key[128..128]" will be connected to GND. ;
++------+-------+----------+-----------------------------------------------------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------+
+; Analysis & Elaboration Messages ;
++---------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Elaboration
+    Info: Version 20.1.1 Build 720 11/11/2020 SJ Lite Edition
+    Info: Processing started: Sat May 21 16:51:51 2022
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off AES -c AES --analysis_and_elaboration
+Info (20032): Parallel compilation is enabled and will use up to 16 processors
+Warning (20031): Parallel compilation is enabled for 16 processors, but there are only 4 processors in the system. Runtime may increase due to over usage of the processor space.
+Info (12021): Found 1 design units, including 1 entities, in source file shiftrows.v
+    Info (12023): Found entity 1: ShiftRows File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/ShiftRows.v Line: 1
+Info (12021): Found 3 design units, including 3 entities, in source file mixcolumns.v
+    Info (12023): Found entity 1: MixColumns File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/MixColumns.v Line: 1
+    Info (12023): Found entity 2: multiplytwo File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/MixColumns.v Line: 86
+    Info (12023): Found entity 3: multiplythree File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/MixColumns.v Line: 115
+Info (12021): Found 5 design units, including 5 entities, in source file invmixcolumns.v
+    Info (12023): Found entity 1: InvMixColumns File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/InvMixColumns.v Line: 1
+    Info (12023): Found entity 2: multiplynine File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/InvMixColumns.v Line: 132
+    Info (12023): Found entity 3: multiplyeleven File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/InvMixColumns.v Line: 146
+    Info (12023): Found entity 4: multiplythirteen File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/InvMixColumns.v Line: 163
+    Info (12023): Found entity 5: multiplyfourteen File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/InvMixColumns.v Line: 176
+Info (12021): Found 1 design units, including 1 entities, in source file inverseshiftrows.v
+    Info (12023): Found entity 1: InverseShiftRows File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/InverseShiftRows.v Line: 1
+Info (12021): Found 3 design units, including 3 entities, in source file subbytes.v
+    Info (12023): Found entity 1: subBytes_state File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/subBytes.v Line: 1
+    Info (12023): Found entity 2: subBytes File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/subBytes.v Line: 19
+    Info (12023): Found entity 3: s_box File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/subBytes.v Line: 35
+Info (12021): Found 2 design units, including 2 entities, in source file subbytes_inv.v
+    Info (12023): Found entity 1: subBytes_inv File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/subBytes_inv.v Line: 1
+    Info (12023): Found entity 2: s_box_inv File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/subBytes_inv.v Line: 17
+Info (12021): Found 1 design units, including 1 entities, in source file keyexpansion.v
+    Info (12023): Found entity 1: KeyExpansion File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/KeyExpansion.v Line: 1
+Info (12021): Found 2 design units, including 2 entities, in source file rotword.v
+    Info (12023): Found entity 1: RotWord File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/RotWord.v Line: 1
+    Info (12023): Found entity 2: rcon File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/RotWord.v Line: 12
+Warning (10229): Verilog HDL Expression warning at Test_bench.v(40): truncated literal to match 32 bits File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/Test_bench.v Line: 40
+Info (12021): Found 3 design units, including 3 entities, in source file test_bench.v
+    Info (12023): Found entity 1: Test_bench File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/Test_bench.v Line: 1
+    Info (12023): Found entity 2: Test_bench_cipher File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/Test_bench.v Line: 26
+    Info (12023): Found entity 3: Test_bench_key File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/Test_bench.v Line: 58
+Info (12021): Found 1 design units, including 1 entities, in source file addroundkey.v
+    Info (12023): Found entity 1: AddRoundKey File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/AddRoundKey.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file cipher.v
+    Info (12023): Found entity 1: cipher File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/cipher.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file blocktostate.v
+    Info (12023): Found entity 1: BlockTostate File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/BlockTostate.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file inv_cipher.v
+    Info (12023): Found entity 1: Inv_cipher File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/Inv_cipher.v Line: 1
+Warning (10463): Verilog HDL Declaration warning at Wrapper.v(7): "final" is SystemVerilog-2005 keyword File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/Wrapper.v Line: 7
+Warning (10229): Verilog HDL Expression warning at Wrapper.v(21): truncated literal to match 32 bits File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/Wrapper.v Line: 21
+Warning (10229): Verilog HDL Expression warning at Wrapper.v(22): truncated literal to match 32 bits File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/Wrapper.v Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file wrapper.v
+    Info (12023): Found entity 1: Wrapper File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/Wrapper.v Line: 1
+Warning (10236): Verilog HDL Implicit Net warning at cipher.v(17): created implicit net for "counter" File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/cipher.v Line: 17
+Warning (10236): Verilog HDL Implicit Net warning at Inv_cipher.v(15): created implicit net for "counter" File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/Inv_cipher.v Line: 15
+Info (12127): Elaborating entity "Wrapper" for the top level hierarchy
+Warning (10230): Verilog HDL assignment warning at Wrapper.v(25): truncated value with size 32 to match size of target (4) File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/Wrapper.v Line: 25
+Info (12128): Elaborating entity "cipher" for hierarchy "cipher:encrypt" File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/Wrapper.v Line: 11
+Warning (10036): Verilog HDL or VHDL warning at cipher.v(17): object "counter" assigned a value but never read File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/cipher.v Line: 17
+Warning (10175): Verilog HDL warning at cipher.v(14): ignoring unsupported system task File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/cipher.v Line: 14
+Warning (10230): Verilog HDL assignment warning at cipher.v(17): truncated value with size 32 to match size of target (1) File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/cipher.v Line: 17
+Info (12128): Elaborating entity "KeyExpansion" for hierarchy "cipher:encrypt|KeyExpansion:keys" File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/cipher.v Line: 7
+Info (12128): Elaborating entity "RotWord" for hierarchy "cipher:encrypt|KeyExpansion:keys|RotWord:rotateFunc" File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/KeyExpansion.v Line: 7
+Info (12128): Elaborating entity "subBytes" for hierarchy "cipher:encrypt|KeyExpansion:keys|subBytes:subFunc" File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/KeyExpansion.v Line: 8
+Info (12128): Elaborating entity "s_box" for hierarchy "cipher:encrypt|KeyExpansion:keys|subBytes:subFunc|s_box:subBytes[31].sbox" File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/subBytes.v Line: 29
+Info (12128): Elaborating entity "rcon" for hierarchy "cipher:encrypt|KeyExpansion:keys|rcon:rconFunc" File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/KeyExpansion.v Line: 10
+Info (12128): Elaborating entity "subBytes_state" for hierarchy "cipher:encrypt|subBytes_state:subbing" File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/cipher.v Line: 8
+Info (12128): Elaborating entity "ShiftRows" for hierarchy "cipher:encrypt|ShiftRows:shifting" File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/cipher.v Line: 9
+Info (12128): Elaborating entity "BlockTostate" for hierarchy "cipher:encrypt|ShiftRows:shifting|BlockTostate:obj" File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/ShiftRows.v Line: 8
+Info (12128): Elaborating entity "MixColumns" for hierarchy "cipher:encrypt|MixColumns:mixing" File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/cipher.v Line: 10
+Info (12128): Elaborating entity "multiplytwo" for hierarchy "cipher:encrypt|MixColumns:mixing|multiplytwo:obj1" File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/MixColumns.v Line: 11
+Warning (10240): Verilog HDL Always Construct warning at MixColumns.v(93): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/MixColumns.v Line: 93
+Warning (10240): Verilog HDL Always Construct warning at MixColumns.v(93): inferring latch(es) for variable "temp", which holds its previous value in one or more paths through the always construct File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/MixColumns.v Line: 93
+Info (10041): Inferred latch for "out[0]" at MixColumns.v(97) File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/MixColumns.v Line: 97
+Info (10041): Inferred latch for "out[1]" at MixColumns.v(97) File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/MixColumns.v Line: 97
+Info (10041): Inferred latch for "out[2]" at MixColumns.v(97) File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/MixColumns.v Line: 97
+Info (10041): Inferred latch for "out[3]" at MixColumns.v(97) File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/MixColumns.v Line: 97
+Info (10041): Inferred latch for "out[4]" at MixColumns.v(97) File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/MixColumns.v Line: 97
+Info (10041): Inferred latch for "out[5]" at MixColumns.v(97) File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/MixColumns.v Line: 97
+Info (10041): Inferred latch for "out[6]" at MixColumns.v(97) File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/MixColumns.v Line: 97
+Info (10041): Inferred latch for "out[7]" at MixColumns.v(97) File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/MixColumns.v Line: 97
+Info (12128): Elaborating entity "multiplythree" for hierarchy "cipher:encrypt|MixColumns:mixing|multiplythree:obj2" File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/MixColumns.v Line: 12
+Warning (10240): Verilog HDL Always Construct warning at MixColumns.v(123): inferring latch(es) for variable "out", which holds its previous value in one or more paths through the always construct File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/MixColumns.v Line: 123
+Warning (10240): Verilog HDL Always Construct warning at MixColumns.v(123): inferring latch(es) for variable "temp", which holds its previous value in one or more paths through the always construct File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/MixColumns.v Line: 123
+Info (10041): Inferred latch for "out[0]" at MixColumns.v(127) File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/MixColumns.v Line: 127
+Info (10041): Inferred latch for "out[1]" at MixColumns.v(127) File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/MixColumns.v Line: 127
+Info (10041): Inferred latch for "out[2]" at MixColumns.v(127) File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/MixColumns.v Line: 127
+Info (10041): Inferred latch for "out[3]" at MixColumns.v(127) File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/MixColumns.v Line: 127
+Info (10041): Inferred latch for "out[4]" at MixColumns.v(127) File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/MixColumns.v Line: 127
+Info (10041): Inferred latch for "out[5]" at MixColumns.v(127) File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/MixColumns.v Line: 127
+Info (10041): Inferred latch for "out[6]" at MixColumns.v(127) File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/MixColumns.v Line: 127
+Info (10041): Inferred latch for "out[7]" at MixColumns.v(127) File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/MixColumns.v Line: 127
+Info (12128): Elaborating entity "AddRoundKey" for hierarchy "cipher:encrypt|AddRoundKey:rounding" File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/cipher.v Line: 11
+Info (12128): Elaborating entity "Inv_cipher" for hierarchy "Inv_cipher:decrypt" File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/Wrapper.v Line: 12
+Warning (10036): Verilog HDL or VHDL warning at Inv_cipher.v(15): object "counter" assigned a value but never read File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/Inv_cipher.v Line: 15
+Warning (10175): Verilog HDL warning at Inv_cipher.v(13): ignoring unsupported system task File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/Inv_cipher.v Line: 13
+Warning (10230): Verilog HDL assignment warning at Inv_cipher.v(15): truncated value with size 32 to match size of target (1) File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/Inv_cipher.v Line: 15
+Info (12128): Elaborating entity "InverseShiftRows" for hierarchy "Inv_cipher:decrypt|InverseShiftRows:shifting" File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/Inv_cipher.v Line: 8
+Info (12128): Elaborating entity "subBytes_inv" for hierarchy "Inv_cipher:decrypt|subBytes_inv:subbing" File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/Inv_cipher.v Line: 9
+Info (12128): Elaborating entity "s_box_inv" for hierarchy "Inv_cipher:decrypt|subBytes_inv:subbing|s_box_inv:subbytesinv[127].sboxinv" File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/subBytes_inv.v Line: 11
+Info (12128): Elaborating entity "InvMixColumns" for hierarchy "Inv_cipher:decrypt|InvMixColumns:mixing" File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/Inv_cipher.v Line: 11
+Info (12128): Elaborating entity "multiplyfourteen" for hierarchy "Inv_cipher:decrypt|InvMixColumns:mixing|multiplyfourteen:obj1" File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/InvMixColumns.v Line: 12
+Info (12128): Elaborating entity "multiplyeleven" for hierarchy "Inv_cipher:decrypt|InvMixColumns:mixing|multiplyeleven:obj2" File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/InvMixColumns.v Line: 13
+Info (12128): Elaborating entity "multiplythirteen" for hierarchy "Inv_cipher:decrypt|InvMixColumns:mixing|multiplythirteen:obj3" File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/InvMixColumns.v Line: 14
+Info (12128): Elaborating entity "multiplynine" for hierarchy "Inv_cipher:decrypt|InvMixColumns:mixing|multiplynine:obj4" File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/InvMixColumns.v Line: 15
+Warning (12020): Port "ordered port 0" on the entity instantiation of "rconFunc" is connected to a signal of width 32. The formal width of the signal in the module is 4.  The extra bits will be ignored. File: D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/KeyExpansion.v Line: 10
+Warning (12241): 3 hierarchies have connectivity warnings - see the Connectivity Checks report folder
+Info (144001): Generated suppressed messages file D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/output_files/AES.map.smsg
+Info: Quartus Prime Analysis & Elaboration was successful. 0 errors, 20 warnings
+    Info: Peak virtual memory: 4975 megabytes
+    Info: Processing ended: Sat May 21 16:52:09 2022
+    Info: Elapsed time: 00:00:18
+    Info: Total CPU time (on all processors): 00:00:30
+
+
++--------------------------------------------+
+; Analysis & Elaboration Suppressed Messages ;
++--------------------------------------------+
+The suppressed messages can be found in D:/CMP2025/First Year/Second Term/Logic Design Advanced/Project/Logic Project New Edition/Logic Project/output_files/AES.map.smsg.
+
+
