@@ -1,1 +1,0 @@
-module #(parameter nk=4)cipher(input clk,reset,input[127:0]state_in,input[])
